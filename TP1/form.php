@@ -1,44 +1,9 @@
 <?php
 
-$error = array(
-    // 'lastnameError' => '',
-    // 'firstnameError' => '',
-    // 'birthdayError' => '',
-    // 'birthcountryError' => '',
-    // 'nationalityError' => '',
-    // 'adressError' => '',
-    // 'cpError' => '',
-    // 'cityError' => '',
-    // 'emailError' => '',
-    // 'phoneError' => '',
-    // 'diplomeError' => '',
-    // 'peError' => '',
-    // 'badgesError' => '',
-    // 'urlError' => '',
-    // 'heroError' => '',
-    // 'hacksError' => '',
-    // 'experienceError' => '',
-);
+// initialisation du tzbeau d'erreurs
+$error = array();
 
-
-// $firstnameError = '';
-// $lastnameError = '';
-// $birthdayError = '';
-// $birthcountryError = '';
-// $nationalityError = '';
-// $adressError = '';
-// $cpError = '';
-// $cityError = '';
-// $emailError = '';
-// $phoneError = '';
-// $diplomeError = '';
-// $poleEmploiError = '';
-// $badgesError = '';
-// $codecademyError = '';
-// $heroError = '';
-// $hacksError = '';
-// $experienceError = '';
-
+// teste si le formulaire est remplis et si les champs sont remplis, sinon affiche une erreur
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['birthday']) && isset($_POST['birthcountry']) && isset($_POST['nationality']) && isset($_POST['adress']) && isset($_POST['cp']) && isset($_POST['city']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['diplome']) && isset($_POST['poleEmploi']) && isset($_POST['badges']) && isset($_POST['codecademy']) && isset($_POST['hero']) && isset($_POST['hacks']) && isset($_POST['experience'])) {
         $firstname = test_input($_POST['firstname']);
@@ -129,26 +94,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+// vérifie l'email
 function isEmail($email)
 {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
+// vérifie le numéro de téléphone
 function isPhone($phone)
 {
     return preg_match('/^[0-9 ]*$/', $phone);
 }
 
+// vérifie le numéro pôle emploi
 function isPoleEmploi($poleEmploi)
 {
     return preg_match('/^[0-9]{8}[A-Z]{2}$/', $poleEmploi);
 }
 
+// vérifie le len codecademy
 function isUrl($codecademy)
 {
     return preg_match('/^(http[s]?:\/\/)?([^:\/\s]+)(:([^\/]*))?(\/\w+\.)*([^#?\s]+)(\?([^#]*))?(#(.*))?$/', $codecademy);
 }
 
+// traite le données du formulaire pour retirer les espaces avant et après
+// supprimer les slashes et convertir les entitées html
 function test_input($data)
 {
     $data = trim($data);
@@ -157,6 +128,7 @@ function test_input($data)
     return $data;
 }
 
+// vérifie la date de naissance
 function validDate($birthday)
 {
     $tab = array_map('intval', explode('/', $birthday));
@@ -166,11 +138,14 @@ function validDate($birthday)
 
 }
 
+
+// vérifie les champs text
 function isText($data)
 {
     return preg_match('/^[a-zA-Zéèàùûêâôëç \'-]+$/', $data);
 }
 
+// verifie le champs code postal
 function isCp($cp)
 {
     return preg_match('/^\d{2}[ ]?\d{3}$/', $cp);
