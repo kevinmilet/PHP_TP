@@ -90,12 +90,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // if (isset($_POST['badges'])) {
-    //     $badges = test_input($_POST['badges']);
-    //     if (empty($badges) || $badges < 0) {
-    //         $error['badgesError'] = 'Ce champs est requis';
-    //     }
-    // }
+    if (isset($_POST['badges'])) {
+        $badges = test_input($_POST['badges']);
+        if (empty($badges) || $badges < 0) {
+            $badges = 0;
+        }
+    }
     
     if (isset($_POST['codecademy'])) {
         $codecademy = test_input(sanitizeUrl($_POST['codecademy']));

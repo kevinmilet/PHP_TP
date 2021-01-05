@@ -19,7 +19,7 @@ require ('form.php');
 </head>
 
 <body>
-    <div class="container mt-3">
+    <div class="container my-3">
         <div class="row mx-2">
             <form action="" method="post" id="user-form">
                 <div class="row">
@@ -372,6 +372,12 @@ require ('form.php');
                 <button type="submit" class="btn btn-primary mb-3">Envoyer</button>
             </form>
         </div>
+    </div>
+
+    <div class="container py-3">
+        <?php
+            include ('user.php');
+            ?>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
