@@ -1,6 +1,6 @@
 <?php
 
-require ('form.php');
+require 'form.php';
 
 ?>
 
@@ -361,7 +361,7 @@ require ('form.php');
                             <input type="radio" name="exp" class="form-check-input exp" value="Oui" id="oui" required>
                             <label for="oui" class="form-check-label">Oui</label>
                         </div>
-                        <div class="form-check form-check-inline">   
+                        <div class="form-check form-check-inline">
                             <input type="radio" name="exp" class="form-check-input exp" value="Non" id="non" required>
                             <label for="non" class="form-check-label">Non</label>
                         </div>
@@ -376,8 +376,8 @@ require ('form.php');
 
     <div class="container py-3">
         <?php
-            include ('user.php');
-            ?>
+include 'user.php';
+?>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

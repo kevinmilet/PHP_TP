@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $badges = 0;
         }
     }
-    
+
     if (isset($_POST['codecademy'])) {
         $codecademy = test_input(sanitizeUrl($_POST['codecademy']));
         if (!isUrl($codecademy) && !empty($codecademy)) {
@@ -200,10 +200,3 @@ function isCp($cp)
 {
     return preg_match('/^\d{2}?\d{3}$/', $cp);
 }
-
-?>
-
-
-
-
-
