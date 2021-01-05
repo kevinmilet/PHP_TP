@@ -1,0 +1,29 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color:#00897b;
+}
+
+.container {
+    background-color: #4ebaaa;
+}
+
+input:invalid {
+    border: red solid 3px;
+}
+
+input:focus:invalid {
+    border: red solid 3px;
+}
+
+.form-control {
+    border-radius: 0;
+    background-clip: unset;
+}
+
+.text-danger {
+    color: #b91400!important;
+}
+
+.btn-primary {
+    border-radius: 0;
+}
