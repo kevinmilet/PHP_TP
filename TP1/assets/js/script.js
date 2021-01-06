@@ -9,16 +9,16 @@ let cp = document.getElementById('cp');
 let city = document.getElementById('city');
 let email = document.getElementById('email');
 let phone = document.getElementById('phone');
-// let diplome = document.getElementById('diplome');
+let diplome = document.getElementById('diplome');
 let poleEmploi = document.getElementById('poleEmploi');
 let codecademy = document.getElementById('codecademy');
-let hero = document.getElementById('hero');
-let hacks = document.getElementById('hacks');
+// let hero = document.getElementById('hero');
+// let hacks = document.getElementById('hacks');
 
 let lastnameError = document.querySelector('.lastnameError');
 let firstnameError = document.querySelector('.firstnameError');
-let birthdayError = document.querySelector('.birhtdayError');
-let birthplaceError = document.querySelector('.birthplaceError');
+// let birthdayError = document.querySelector('.birhtdayError');
+// let birthplaceError = document.querySelector('.birthplaceError');
 let nationalityError = document.querySelector('.nationalityError');
 let addressError = document.querySelector('.addressError');
 let cpError = document.querySelector('.cpError');
@@ -27,9 +27,9 @@ let emailError = document.querySelector('.emailError');
 let phoneError = document.querySelector('.phoneError');
 let diplomeError = document.querySelector('.diplomeError');
 let peError = document.querySelector('.peError');
-let codecademyError = document.querySelector('.codecademyError');
-let heroError = document.querySelector('.heroError');
-let hacksError = document.querySelector('.hacksError');
+let urlError = document.querySelector('.urlError');
+// let heroError = document.querySelector('.heroError');
+// let hacksError = document.querySelector('.hacksError');
 
 // Stockage des Regex
 
@@ -42,27 +42,45 @@ const textReg = /^[0-9a-zA-Zéèàùûêâôëç \'-]+$/;
 const emailReg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,5}$/;
 
 // déclaration des écouteurs
-lastname.addEventListener('input', checkName);
-firstname.addEventListener('input', checkName);
+lastname.addEventListener('input', checkLastname);
+firstname.addEventListener('input', checkFirstname);
 // birthday.addEventListener('input', checkBirthday);
 // birthplace.addEventListener('select', checkBirthplace);
-nationality.addEventListener('input', checkName);
+nationality.addEventListener('input', checkNationality);
 address.addEventListener('input', checkAddress);
 cp.addEventListener('input', checkCp);
-city.addEventListener('input', checkName);
+city.addEventListener('input', checkCity);
 email.addEventListener('input', checkMail);
 phone.addEventListener('input', checkPhone);
 // diplome.addEventListener('select', checkDiplome);
-// poleEmploi.addEventListener('input', checkPE);
+poleEmploi.addEventListener('input', checkPE);
 codecademy.addEventListener('input', checkUrl);
 
 // Fonctions de tests
-function checkName() {
+function checkLastname() {
     if (nameReg.test(lastname.value)) {
         lastnameError.textContent = '';
     }
     else {
         lastnameError.textContent = 'Que des lettres, des -, des \' ou des espaces';
+    };
+}
+
+function checkFirstname() {
+    if (nameReg.test(firstname.value)) {
+        firstnameError.textContent = '';
+    }
+    else {
+        firstnameError.textContent = 'Que des lettres, des -, des \' ou des espaces';
+    };
+}
+
+function checkNationality() {
+    if (nameReg.test(nationality.value)) {
+        nationalityError.textContent = '';
+    }
+    else {
+        nationalityError.textContent = 'Que des lettres, des -, des \' ou des espaces';
     };
 }
 
@@ -84,6 +102,15 @@ function checkCp() {
     };
 }
 
+function checkCity() {
+    if (nameReg.test(city.value)) {
+        cityError.textContent = '';
+    }
+    else {
+        cityError.textContent = 'Que des lettres, des -, des \' ou des espaces';
+    };
+}
+
 function checkMail() {
     if (emailReg.test(email.value)) {
         emailError.textContent = '';
@@ -98,7 +125,7 @@ function checkPhone() {
         phoneError.textContent = '';
     }
     else {
-        phoneError.textContent = 'Que des chiffres et des espaces';
+        phoneError.textContent = '10 chiffres uniquement';
     };
 }
 
@@ -108,5 +135,14 @@ function checkUrl() {
     }
     else {
         urlError.textContent = 'Ceci n\'est pas un lien valide';
+    };
+}
+
+function checkPE() {
+    if (peReg.test(poleEmploi.value)) {
+        peError.textContent = '';
+    }
+    else {
+        peError.textContent = 'Ceci n\'est pas un numéro pôle emploi';
     };
 }

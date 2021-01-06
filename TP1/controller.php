@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $error['firstnameError'] = 'Ce champs est requis';
         }
     }
-
+    
     if (isset($_POST['birthday'])) {
         $birthday = test_input($_POST['birthday']);
 
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['phone'])) {
         $phone = test_input($_POST['phone']);
         if (!isPhone($phone) || empty($phone)) {
-            $error['phoneError'] = 'Que des chiffres et des espaces';
+            $error['phoneError'] = 'Ce champs est requis (10 chiffres)';
         }
     }
 
@@ -98,14 +98,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (isset($_POST['badges'])) {
+
         $badges = test_input($_POST['badges']);
-        var_dump($badges);
-        if (empty($badges) || !isText($badges)) {
+        
+        if (empty($badges) || isText($badges)) {
             $badges = 0;
         } else {
             $badges = intval($badges);
-            
-        }var_dump($badges);
+        }
     }
 
     if (isset($_POST['codecademy'])) {
