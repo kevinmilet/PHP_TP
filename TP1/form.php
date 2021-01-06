@@ -333,7 +333,7 @@
             </div>
             <div class="col-md-6 mb-2">
                 <label for="codecademy">Lien Codecademy</label>
-                <input type="text" class="form-control" name="codecademy" id="codecademy">
+                <input type="url" class="form-control" name="codecademy" id="codecademy">
                 <p class="urlError font-italic text-danger"><?=$error['urlError'] ?? ''?></p>
             </div>
             <div class="col-md-12 mb-2">

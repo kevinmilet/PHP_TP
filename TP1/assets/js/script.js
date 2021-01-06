@@ -11,11 +11,9 @@ let email = document.getElementById('email');
 let phone = document.getElementById('phone');
 // let diplome = document.getElementById('diplome');
 let poleEmploi = document.getElementById('poleEmploi');
-let badges = document.getElementById('badges');
 let codecademy = document.getElementById('codecademy');
 let hero = document.getElementById('hero');
 let hacks = document.getElementById('hacks');
-// let exp = document.querySelectorAll('.exp');
 
 let lastnameError = document.querySelector('.lastnameError');
 let firstnameError = document.querySelector('.firstnameError');
@@ -29,11 +27,9 @@ let emailError = document.querySelector('.emailError');
 let phoneError = document.querySelector('.phoneError');
 let diplomeError = document.querySelector('.diplomeError');
 let peError = document.querySelector('.peError');
-let badgesError = document.querySelector('.badgesError');
 let codecademyError = document.querySelector('.codecademyError');
 let heroError = document.querySelector('.heroError');
 let hacksError = document.querySelector('.hacksError');
-// let exp = document.querySelectorAll('.exp');
 
 // Stockage des Regex
 
@@ -58,8 +54,7 @@ email.addEventListener('input', checkMail);
 phone.addEventListener('input', checkPhone);
 // diplome.addEventListener('select', checkDiplome);
 // poleEmploi.addEventListener('input', checkPE);
-// badges.addEventListener('input', checkBadges);
-// codecademy.addEventListener('input', checkUrl);
+codecademy.addEventListener('input', checkUrl);
 
 // Fonctions de tests
 function checkName() {
@@ -104,5 +99,14 @@ function checkPhone() {
     }
     else {
         phoneError.textContent = 'Que des chiffres et des espaces';
+    };
+}
+
+function checkUrl() {
+    if (urlReg.test(codecademy.value)) {
+        urlError.textContent = '';
+    }
+    else {
+        urlError.textContent = 'Ceci n\'est pas un lien valide';
     };
 }
