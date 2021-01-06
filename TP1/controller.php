@@ -87,6 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $diplome = test_input($_POST['diplome']);
         if (empty($diplome) || $diplome == '' || !isText($diplome)) {
             $error['diplomeError'] = 'Ce champs est requis';
+            var_dump($diplome);
+        } else {
+            var_dump($diplome);
         }
     }
 

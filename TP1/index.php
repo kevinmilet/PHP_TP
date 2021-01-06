@@ -24,8 +24,10 @@ include 'controller.php';
         <?php
             
             if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($error)) {
+                // afficher les données si le formulaire est envoyé et qu'il n'y a pas d'erreur
                 include 'datas.php';
             } else {
+                // sinon afficher le formulaire
                 include 'form.php';
             }
             ?>

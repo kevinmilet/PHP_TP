@@ -4,25 +4,24 @@
             <div class="col-md-6 mb-2">
                 <label for="lastname">Nom *</label>
                 <input type="text" class="form-control" name="lastname" id="lastname" pattern="[A-Za-zéèàùûêâôëç' -]+"
-                    title="Uniquement des lettres, des -, des ' et des espaces">
+                    title="Uniquement des lettres, des -, des ' et des espaces" value="<?=isset($_POST['lastname']) ? $_POST['lastname'] : ''?>">
                 <p class="lastnameError font-italic text-danger"><?=$error['lastnameError'] ?? ''?></p>
             </div>
             <div class="col-md-6 mb-2">
                 <label for="firsttname">Prénom *</label>
                 <input type="text" class="form-control" name="firstname" id="firstname" pattern="[A-Za-zéèàùûêâôëç' -]+"
-                    title="Uniquement des lettres, des -, des ' et des espaces">
+                    title="Uniquement des lettres, des -, des ' et des espaces" value="<?=isset($_POST['firstname']) ? $_POST['firstname'] : ''?>">
                 <p class="firstnameError font-italic text-danger"><?=$error['firstnameError'] ?? ''?></p>
             </div>
             <div class="col-md-4 mb-2">
                 <label for="birthday">Date de naissance *</label>
                 <input type="date" class="form-control" min="1900-01-01" max="<?=date('Y-m-d')?>" name="birthday"
-                    id="birthday" value="<?=date('Y-m-d')?>"
-                    pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))">
+                    id="birthday" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" value="<?=isset($_POST['birthday']) ? $_POST['birthday'] : ''?>">
                 <p class="birthdayError font-italic text-danger"><?=$error['birthdayError'] ?? ''?></p>
             </div>
             <div class="col-md-4 mb-2">
                 <label for="birthcountry">Pays de naissance *</label>
-                <select type="text" class="form-control" name="birthplace" id="birthplace">
+                <select class="form-control" name="birthplace" id="birthplace">
                     <option value=""></option>
                     <option value="afghanistan">Afghanistan</option>
                     <option value="afrique-du-sud">Afrique du Sud</option>
@@ -275,47 +274,47 @@
             <div class="col-md-4 mb-2">
                 <label for="nationality">Nationalité *</label>
                 <input type="text" class="form-control" name="nationality" id="nationality"
-                    pattern="[A-Za-zéèàùûêâôëç' -]+" title="Uniquement des lettres, des -, des ' et des espaces">
+                    pattern="[A-Za-zéèàùûêâôëç' -]+" title="Uniquement des lettres, des -, des ' et des espaces"  value="<?=isset($_POST['nationality']) ? $_POST['nationality'] : ''?>">
                 <p class="nationalityError font-italic text-danger"><?=$error['nationalityError'] ?? ''?></p>
             </div>
             <div class="col-md-6 mb-2">
                 <label for="address">Adresse *</label>
                 <input type="text" class="form-control" name="address" id="address" pattern="[0-9A-Za-zéèàùûêâôëç' -]+"
-                    title="Uniquement des lettres et des chiffres">
+                    title="Uniquement des lettres et des chiffres" value="<?=isset($_POST['address']) ? $_POST['address'] : ''?>">
                 <p class="addressError font-italic text-danger"><?=$error['addressError'] ?? ''?></p>
             </div>
             <div class="col-md-2 mb-2">
                 <label for="cp">Code postal *</label>
                 <input type="text" class="form-control" name="cp" minlenght="5" maxlength="5" id="cp"
-                    pattern="\d{2}?\d{3}" title="5 chiffres uniquement">
+                    pattern="\d{2}?\d{3}" title="5 chiffres uniquement" value="<?=isset($_POST['cp']) ? $_POST['cp'] : ''?>">
                 <p class="cpError font-italic text-danger"><?=$error['cpError'] ?? ''?></p>
             </div>
             <div class="col-md-4 mb-2">
                 <label for="city">Ville *</label>
                 <input type="text" class="form-control" name="city" id="city" pattern="[A-Za-zéèàùûêâôëç' -]+"
-                    title="Uniquement des lettres, des -, des ' et des espaces">
+                    title="Uniquement des lettres, des -, des ' et des espaces" value="<?=isset($_POST['city']) ? $_POST['city'] : ''?>">
                 <p class="cityError font-italic text-danger"><?=$error['cityError'] ?? ''?></p>
             </div>
             <div class="col-md-6 mb-2">
                 <label for="email">Email *</label>
                 <input type="email" class="form-control" name="email" id="email"
-                    pattern="[\w-\.]+@([\w-]+\.)+[\w-]{2,5}" title="Email au format xxx@xxx.xxx">
+                    pattern="[\w-\.]+@([\w-]+\.)+[\w-]{2,5}" title="Email au format xxx@xxx.xxx" value="<?=isset($_POST['email']) ? $_POST['email'] : ''?>">
                 <p class="emailError font-italic text-danger"><?=$error['emailError'] ?? ''?></p>
             </div>
             <div class="col-md-6 mb-2">
                 <label for="phone">Téléphone *</label>
                 <input type="text" class="form-control" name="phone" id="phone" minlength="10" maxlength="10"
-                    pattern="[0-9]*" title="10 chiffres uniquement">
+                    pattern="[0-9]*" title="10 chiffres uniquement" value="<?=isset($_POST['phone']) ? $_POST['phone'] : ''?>">
                 <p class="phoneError font-italic text-danger"><?=$error['phoneError'] ?? ''?></p>
             </div>
             <div class="col-md-6 mb-2">
-                <label for="Diplôme">Diplôme *</label>
-                <select type="text" class="form-control" name="diplome" id="diplome">
-                    <option form-control value=""></option>
-                    <option form-control value="Sans">Sans</option>
-                    <option form-control value="Bac">Bac</option>
-                    <option form-control value="Bac + 2">Bac + 2</option>
-                    <option form-control value="Bac + 3 ou supérieur">Bac + 3 ou supérieur</option>
+                <label for="diplome">Diplôme *</label>
+                <select class="form-control" name="diplome" id="diplome">
+                    <option value=""></option>
+                    <option value="Sans">Sans</option>
+                    <option value="Bac">Bac</option>
+                    <option value="Bac + 2">Bac + 2</option>
+                    <option value="Bac + 3 ou superieur">Bac + 3 ou supérieur</option>
                 </select>
                 <p class="diplomeError font-italic text-danger"><?=$error['diplomeError'] ?? ''?></p>
             </div>
@@ -323,29 +322,29 @@
                 <label for="poleEmploi">Numéro Pôle emploi (Laisser vide si pas de numéro)</label>
                 <input type="text" class="form-control" placeholder="8 chiffres, 2 lettres" name="poleEmploi"
                     id="poleEmploi" maxlength="10" pattern="[0-9]{8}[A-Z]{2}"
-                    title="8 chiffres et 2 lettres ou laisser vide">
+                    title="8 chiffres et 2 lettres ou laisser vide" value="<?=isset($_POST['poleEmploi']) ? $_POST['poleEmploi'] : ''?>">
                 <p class="peError font-italic text-danger"><?=$error['peError'] ?? ''?></p>
             </div>
             <div class="col-md-6 mb-2">
                 <label for="badges">Badges</label>
-                <input type="number" class="form-control mr-2" min="1" name="badges" id="badges">
+                <input type="number" class="form-control mr-2" min="1" name="badges" id="badges" value="<?=isset($_POST['badges']) ? $_POST['badges'] : ''?>">
                 <p class="badgesError font-italic text-danger"><?=$error['badgesError'] ?? ''?></p>
             </div>
             <div class="col-md-6 mb-2">
                 <label for="codecademy">Lien Codecademy</label>
-                <input type="url" class="form-control" name="codecademy" id="codecademy">
+                <input type="url" class="form-control" name="codecademy" id="codecademy" value="<?=isset($_POST['codecademy']) ? $_POST['codecademy'] : ''?>">
                 <p class="urlError font-italic text-danger"><?=$error['urlError'] ?? ''?></p>
             </div>
             <div class="col-md-12 mb-2">
                 <label for="hero">Si vous étiez un super héros/une super héroïne, qui seriez-vous et pourquoi
                     ? *</label>
-                <textarea name="hero" class="form-control" cols="30" rows="10" id="hero"></textarea>
+                <textarea name="hero" class="form-control" cols="30" rows="10" id="hero" ><?=isset($_POST['hero']) ? $_POST['hero'] : ''?></textarea>
                 <p class="heroError font-italic text-danger"><?=$error['heroError'] ?? ''?></p>
             </div>
             <div class="col-md-12 mb-2">
                 <label for="hacks">Racontez-nous un de vos "hacks" (pas forcément technique ou
                     informatique) *</label>
-                <textarea name="hacks" class="form-control" cols="30" rows="10" id="hacks"></textarea>
+                <textarea name="hacks" class="form-control" cols="30" rows="10" id="hacks" ><?=isset($_POST['hacks']) ? $_POST['hacks'] : ''?></textarea>
                 <p class="hacksError font-italic text-danger"><?=$error['hacksError'] ?? ''?></p>
             </div>
             <div class="col-md-12 mb-2">
