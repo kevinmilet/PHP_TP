@@ -24,7 +24,7 @@
                 <select class="form-control" name="birthplace" id="birthplace">
                     <option value=""></option>
                     <option value="afghanistan">Afghanistan</option>
-                    <option value="afrique-du-sud">Afrique du Sud</option>
+                    <option value="afrique du sud">Afrique du Sud</option>
                     <option value="albanie">Albanie</option>
                     <option value="algerie">Algérie</option>
                     <option value="allemagne">Allemagne</option>
@@ -314,7 +314,7 @@
                     <option value="Sans">Sans</option>
                     <option value="Bac">Bac</option>
                     <option value="Bac + 2">Bac + 2</option>
-                    <option value="Bac + 3 ou superieur">Bac + 3 ou supérieur</option>
+                    <option value="Bac + 3 ou supérieur">Bac + 3 ou supérieur</option>
                 </select>
                 <p class="diplomeError font-italic text-danger"><?=$error['diplomeError'] ?? ''?></p>
             </div>
