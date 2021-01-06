@@ -22,6 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['birthday'])) {
         $birthday = test_input($_POST['birthday']);
+
+        // conversion de la date du format Y-m-d au format d-m-Y
+        $timestamp = strtotime($birthday);
+        $birthday = date('d-m-Y', $timestamp);
+
         if (empty($birthday)) {
             $error['birthdayError'] = 'Ce champs est requis';
         }
@@ -29,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['birthplace'])) {
         $birthplace = test_input($_POST['birthplace']);
-        if (empty($birthplace)) {
+        if (empty($birthplace) || $birthplace == '') {
             $error['birthplaceError'] = 'Ce champs est requis';
         }
     }
