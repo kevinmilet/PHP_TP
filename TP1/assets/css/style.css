@@ -30,3 +30,10 @@ input:focus:invalid {
     border-radius: 3px;
     background-color: #0072b5;
 }
+
+.data-div {
+    border-radius: 3px;
+    background-color: #d4ad77;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}

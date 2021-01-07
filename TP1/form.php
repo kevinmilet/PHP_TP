@@ -292,7 +292,7 @@ $country = array(
             <div class="col-md-2 mb-2">
                 <label for="cp">Code postal *</label>
                 <input type="text" class="form-control" name="cp" minlenght="5" maxlength="5" id="cp"
-                    pattern="\d{2}?\d{3}" title="5 chiffres uniquement" value="<?=isset($_POST['cp']) ? $_POST['cp'] : ''?>">
+                    pattern="([0-9]{1}[0-5]{1}[0-9]{3})|(9[7-8]{1}[2-8]{1}[0-9]{2})" title="5 chiffres uniquement" value="<?=isset($_POST['cp']) ? $_POST['cp'] : ''?>">
                 <p class="cpError font-italic text-danger"><?=$error['cpError'] ?? ''?></p>
             </div>
             <div class="col-md-4 mb-2">
@@ -357,11 +357,11 @@ $country = array(
                 <p>Avez vous déjà eu une expérience avec la programmation et/ou l'informatique avant de remplir ce
                     formulaire ? *</p>
                 <div class="form-check form-check-inline">
-                    <input type="radio" name="exp" class="form-check-input exp" value="Oui" id="oui" required>
+                    <input type="radio" name="exp" class="form-check-input exp" value="Oui" id="oui" required <?=isset($_POST['exp']) && $_POST['exp'] == 'Oui' ? 'checked' : ''?>>
                     <label for="oui" class="form-check-label">Oui</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input type="radio" name="exp" class="form-check-input exp" value="Non" id="non" required>
+                    <input type="radio" name="exp" class="form-check-input exp" value="Non" id="non" required <?=isset($_POST['exp']) && $_POST['exp'] == 'Non' ? 'checked' : ''?>>
                     <label for="non" class="form-check-label">Non</label>
                 </div>
                 <p class="expError font-italic text-danger"><?=$error['expError'] ?? ''?></p>
