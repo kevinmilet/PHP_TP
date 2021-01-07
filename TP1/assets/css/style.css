@@ -9,13 +9,13 @@ body {
     border-radius: 3px;
 }
 
-input:invalid {
+/* input:invalid {
     border: red solid 3px;
-}
+} */
 
-input:focus:invalid {
+/* input:focus:invalid {
     border: red solid 3px;
-}
+} */
 
 .form-control {
     border-radius: 3px;
