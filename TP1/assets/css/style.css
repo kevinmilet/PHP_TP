@@ -22,6 +22,11 @@ body {
     background-clip: unset;
 }
 
+.form-control:focus {
+    border: 2px solid  #363945;
+    box-shadow: unset;
+}
+
 .text-danger {
     color: #b91400!important;
 }
@@ -31,9 +36,24 @@ body {
     background-color: #0072b5;
 }
 
+.btn-primary:hover {
+    background-color:  #363945;
+    border: 1px solid  #363945;
+}
+
+.btn-primary:focus {
+    border: 2px solid  #363945;
+    box-shadow: unset;
+}
+
 .data-div {
     border-radius: 3px;
     background-color: #d4ad77;
     padding: 10px 20px;
     margin-bottom: 20px;
+}
+
+.data-title {
+    font-weight: 700;
+    text-decoration: underline;
 }

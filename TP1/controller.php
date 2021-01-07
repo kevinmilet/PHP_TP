@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 //conversion de la date du format Y-m-d au format d-m-Y
                 $timestamp = strtotime($birthday);
-                $birthday = date('d-m-Y', $timestamp);
+                $birthday = date('d/m/Y', $timestamp);
             }
         }
     } else {
