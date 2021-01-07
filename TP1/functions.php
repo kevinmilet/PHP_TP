@@ -71,3 +71,9 @@ function isDate($date) {
     $date = preg_match(REGDATE, $date);
     return $date;
 }
+
+function isDiplome($data) {
+    $data = filter_var($data, FILTER_SANITIZE_STRING);
+    $data = preg_match(REGSTRING, $data);
+    return $data;
+}
