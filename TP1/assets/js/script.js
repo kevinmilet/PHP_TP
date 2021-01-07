@@ -42,7 +42,7 @@ const textReg = /^[0-9a-zA-Zéèàùûêâôëç \'-]+$/;
 const emailReg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,5}$/;
 
 // déclaration des écouteurs
-lastname.addEventListener('input', checkLastname);
+lastname.addEventListener('submit', checkLastname);
 firstname.addEventListener('input', checkFirstname);
 // birthday.addEventListener('input', checkBirthday);
 // birthplace.addEventListener('select', checkBirthplace);
@@ -55,8 +55,8 @@ phone.addEventListener('input', checkPhone);
 // diplome.addEventListener('select', checkDiplome);
 poleEmploi.addEventListener('input', checkPE);
 codecademy.addEventListener('input', checkUrl);
-hero.addEventListener('input', checkHero);
-hacks.addEventListener('input', checkHacks);
+hero.addEventListener('submit', checkHero);
+hacks.addEventListener('submit', checkHacks);
 
 // Fonctions de tests
 function checkLastname() {
