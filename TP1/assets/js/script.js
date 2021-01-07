@@ -12,8 +12,8 @@ let phone = document.getElementById('phone');
 let diplome = document.getElementById('diplome');
 let poleEmploi = document.getElementById('poleEmploi');
 let codecademy = document.getElementById('codecademy');
-// let hero = document.getElementById('hero');
-// let hacks = document.getElementById('hacks');
+let hero = document.getElementById('hero');
+let hacks = document.getElementById('hacks');
 
 let lastnameError = document.querySelector('.lastnameError');
 let firstnameError = document.querySelector('.firstnameError');
@@ -28,8 +28,8 @@ let phoneError = document.querySelector('.phoneError');
 let diplomeError = document.querySelector('.diplomeError');
 let peError = document.querySelector('.peError');
 let urlError = document.querySelector('.urlError');
-// let heroError = document.querySelector('.heroError');
-// let hacksError = document.querySelector('.hacksError');
+let heroError = document.querySelector('.heroError');
+let hacksError = document.querySelector('.hacksError');
 
 // Stockage des Regex
 
@@ -55,6 +55,8 @@ phone.addEventListener('input', checkPhone);
 // diplome.addEventListener('select', checkDiplome);
 poleEmploi.addEventListener('input', checkPE);
 codecademy.addEventListener('input', checkUrl);
+hero.addEventListener('input', checkHero);
+hacks.addEventListener('input', checkHacks);
 
 // Fonctions de tests
 function checkLastname() {
@@ -145,4 +147,14 @@ function checkPE() {
     else {
         peError.textContent = 'Ceci n\'est pas un numéro pôle emploi';
     };
+}
+
+function checkHero() {
+    if (hero.value == '')
+        heroError.textContent = 'Veuillez remplir ce champs';
+}
+
+function checkHacks() {
+    if (hacks.value == '')
+        hacksError.textContent = 'Veuillez remplir ce champs';
 }
