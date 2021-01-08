@@ -42,7 +42,7 @@ const textReg = /^[0-9a-zA-Zéèàùûêâôëç \'-]+$/;
 const emailReg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,5}$/;
 
 // déclaration des écouteurs
-lastname.addEventListener('submit', checkLastname);
+lastname.addEventListener('input', checkLastname);
 firstname.addEventListener('input', checkFirstname);
 // birthday.addEventListener('input', checkBirthday);
 // birthplace.addEventListener('select', checkBirthplace);
@@ -60,12 +60,15 @@ hacks.addEventListener('submit', checkHacks);
 
 // Fonctions de tests
 function checkLastname() {
-    if (nameReg.test(lastname.value)) {
+    if (lastname == '') {
+        lastnameError.textContent = 'Veuillez remplir ce champs';
+    } else {
+        if (nameReg.test(lastname.value)) {
         lastnameError.textContent = '';
-    }
-    else {
+        } else {
         lastnameError.textContent = 'Que des lettres, des -, des \' ou des espaces';
-    };
+        }
+    }   
 }
 
 function checkFirstname() {
@@ -151,10 +154,13 @@ function checkPE() {
 
 function checkHero() {
     if (hero.value == '')
+    console.log('Coucou');
         heroError.textContent = 'Veuillez remplir ce champs';
 }
 
 function checkHacks() {
     if (hacks.value == '')
+    console.log('Coucou');
+
         hacksError.textContent = 'Veuillez remplir ce champs';
 }
