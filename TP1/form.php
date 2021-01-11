@@ -250,7 +250,7 @@ $country = array(
 
 <!-- formulaire de contact -->
 <div class="row mx-2">
-    <form action="" method="post" id="user-form">
+    <form action="" method="POST" id="user-form">
     <p class="formError font-italic text-danger"><?=$error['formError'] ?? ''?></p>
         <div class="row">
             <div class="col-md-6 mb-2">
