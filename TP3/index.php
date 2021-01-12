@@ -6,13 +6,13 @@ $portrait3 = array('name'=>'Pierre', 'firstname'=>'Corneille', 'portrait'=>'http
 $portrait4 = array('name'=>'Jean', 'firstname'=>'Racine', 'portrait'=>'http://upload.wikimedia.org/wikipedia/commons/d/d5/Jean_racine.jpg');
 
 function viewUser($array) {
-    ?>
-    
-    <?php foreach ($array as $key => $value): ?>
-        
-    <?php endforeach ?>
-    
-<?php
+    $user = '<div class="card" style="width: 18rem;">
+                <img src="'.$array['portrait'].'" class="card-img-top" alt="Portrait de '.$array['name'].' '.$array['firstname'].'">
+                <div class="card-body">
+                    <h5 class="card-title">'.$array['name'].' '.$array['firstname'].'</h5>
+                </div>
+            </div>';
+    return $user;
 }
 ?>
 
@@ -28,7 +28,25 @@ function viewUser($array) {
 </head>
 <body>
     
-    <?= viewUser($portrait1); ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <?= viewUser($portrait1); ?>
+            </div>
+            <div class="col-md-6">
+                <?= viewUser($portrait2); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <?= viewUser($portrait3); ?>
+            </div>
+            <div class="col-md-6">
+                <?= viewUser($portrait4); ?>
+            </div>
+        </div>
+    </div>
+    
     
 
 
