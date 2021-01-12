@@ -8,19 +8,19 @@ include 'utils\regexp.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // on récupére les values des champs et les nettoies
-    $civility = trim(filter_input(INPUT_POST, 'civility', FILTER_SANITIZE_STRING));
+    $gender = trim(filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING));
     $lastname = trim(filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING));
     $firstname = trim(filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING));
     $age = intval(trim(filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT))); // on converti l'age en entier
     $company = trim(filter_input(INPUT_POST, 'company', FILTER_SANITIZE_STRING));
 
     // validation du champs civilité
-    if (empty($civility)) {
+    if (empty($gender)) {
         // si le champs est vide on affiche une erreur (champs obligatoire)
         $errors['civError'] = 'Ce champs est requis';
 
         } else {
-            if  ($civility != 'Mr' && $civility != 'Mme') {
+            if  ($gender != 'Mr' && $gender != 'Mme') {
             // si le champs est rempli on teste la valeur avec une regex
             $errors['civError'] = 'Uniquement Mr ou Mme';
         }

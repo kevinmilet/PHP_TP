@@ -4,13 +4,13 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <label for="civility">Civilité</label>
-                <select name="civility" id="civility" class="form-control" required>
+                <label for="gender">Civilité</label>
+                <select name="gender" id="gender" class="form-control" required>
                     <option value=""></option>
-                    <option value="Mr" <?=isset($_POST['civility']) && ($_POST['civility'] == 'Mr') ? 'selected' : ''?>>
-                        Mr</option>
-                    <option value="Mme"
-                        <?=isset($_POST['civility']) && ($_POST['civility'] == 'Mme') ? 'selected' : ''?>>Mme</option>
+                    <option value="Mr" <?=isset($_POST['gender']) && ($_POST['gender'] == 'Mr') ? 'selected' : ''?>>Mr
+                    </option>
+                    <option value="Mme" <?=isset($_POST['gender']) && ($_POST['gender'] == 'Mme') ? 'selected' : ''?>>
+                        Mme</option>
                 </select>
                 <p class="civError text-danger font-italic"><?=$errors['civError'] ?? ''?></p>
             </div>

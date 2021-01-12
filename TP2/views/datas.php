@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <p><strong class="data-title">Civilité:</strong> <?=$civility?></p>
+        <p><strong class="data-title">Civilité:</strong> <?=$gender?></p>
     </div>
     <div class="col-md-4"></div>
 </div>
