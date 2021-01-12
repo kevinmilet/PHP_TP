@@ -5,7 +5,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <label for="civility">Civilité</label>
-                <select name="civility" id="civility" class="form-control">
+                <select name="civility" id="civility" class="form-control" required>
                     <option value=""></option>
                     <option value="Mr" <?=isset($_POST['civility']) && ($_POST['civility'] == 'Mr') ? 'selected' : ''?>>
                         Mr</option>
@@ -22,7 +22,7 @@
             <div class="col-md-4">
                 <label for="lastname">Nom</label>
                 <input type="text" name="lastname" id="lastname" class="form-control" pattern="[A-Za-zéèàùûêâôëç' -]+"
-                    value="<?=isset($_POST['lastname']) ? $_POST['lastname'] : ''?>">
+                    value="<?=isset($_POST['lastname']) ? $_POST['lastname'] : ''?>" required>
                 <p class="lastnameError text-danger font-italic"><?=$errors['lastnameError'] ?? ''?></p>
             </div>
             <div class="col-md-4"></div>
@@ -33,7 +33,7 @@
             <div class="col-md-4">
                 <label for="firstname">Prénom</label>
                 <input type="text" name="firstname" id="firstname" class="form-control" pattern="[A-Za-zéèàùûêâôëç' -]+"
-                    value="<?=isset($_POST['firstname']) ? $_POST['firstname'] : ''?>">
+                    value="<?=isset($_POST['firstname']) ? $_POST['firstname'] : ''?>" required>
                 <p class="firstnameError text-danger font-italic"><?=$errors['firstnameError'] ?? ''?></p>
             </div>
             <div class="col-md-4"></div>
@@ -53,10 +53,10 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <label for="society">Société</label>
-                <input type="text" name="society" id="society" class="form-control" pattern="[A-Za-zéèàùûêâôëç' -&]+"
-                    value="<?=isset($_POST['society']) ? $_POST['society'] : ''?>">
-                <p class="societyError text-danger font-italic"><?=$errors['societyError'] ?? ''?></p>
+                <label for="company">Société</label>
+                <input type="text" name="company" id="company" class="form-control" pattern="[A-Za-zéèàùûêâôëç' -&]+"
+                    value="<?=isset($_POST['company']) ? $_POST['company'] : ''?>">
+                <p class="companyError text-danger font-italic"><?=$errors['companyError'] ?? ''?></p>
             </div>
             <div class="col-md-4"></div>
         </div>

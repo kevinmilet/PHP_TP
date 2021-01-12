@@ -1,6 +1,6 @@
 <?php
 
-include 'controllerform.php';
+include 'controllers\controllerform.php';
 
 ?>
 
@@ -19,14 +19,14 @@ include 'controllerform.php';
 
     <div class="container">
     
-        <?php include 'form.php'; ?>
+        <?php include 'views\form.php'; ?>
 
         <div class="data">
         <?php 
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($errors)) {
                 // afficher les données si le formulaire est envoyé et qu'il n'y a pas d'erreur
-                include 'datas.php';
+                include 'views\datas.php';
             }
 
         ?>

@@ -31,7 +31,7 @@
 <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <p><strong class="data-title">Société:</strong> <?=$society?></p>
+        <p><strong class="data-title">Société:</strong> <?=$company?></p>
     </div>
     <div class="col-md-4"></div>
 </div>
